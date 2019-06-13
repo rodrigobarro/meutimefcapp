@@ -1,0 +1,6 @@
+framework module Pods_MeuTimeFcApp {
+  umbrella header "Pods-MeuTimeFcApp-umbrella.h"
+
+  export *
+  module * { export * }
+}
