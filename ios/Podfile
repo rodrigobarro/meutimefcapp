@@ -13,6 +13,8 @@ target 'MeuTimeFcApp' do
   
 
   platform :ios, '9.0'
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
   target 'MeuTimeFcAppTests' do
     inherit! :search_paths
     # Pods for testing

@@ -1,28 +1,224 @@
 import React from 'react';
-
 import {
-  Text, StyleSheet, View,
+ Text, View, StyleSheet, TouchableHighlight, Image, ImageBackground, Modal 
 } from 'react-native';
 
+import { Button } from 'react-native-elements';
+
+/*
+const Main = () => (
+  <ImageBackground
+    source={require('../../assets/soccer-background.jpg')}
+    style={styles.backgroundImage}
+    resizeMode="cover"
+  >
+    <Image source={require('../../assets/logo.png')} style={styles.logo} />
+    <Image source={require('../../assets/escale.png')} style={styles.escale} />
+    <Text style={styles.noAccountQuestion}>Ainda não tem uma conta?</Text>
+    <Button
+      title="CRIE SEU TIME AGORA"
+      titleStyle={styles.titleCreateNewTeam}
+      buttonStyle={styles.buttonCreateNewTeam}
+      onPress={() =>
+        this.props.navigation.navigate('Friends')
+      }
+    />
+    <View style={styles.container}>
+      <Text style={styles.isCustomer}>Já tem conta?</Text>
+      <Text style={styles.clickHere}>Acesse aqui</Text>
+    </View>
+
+    <View style={styles.leagueContainer}>
+      <Image
+        style={styles.league}
+        source={require('../../assets/copa_america.png')}
+       />
+      <Image
+        style={styles.league}
+        source={require('../../assets/copa_libertadores.png')}
+       />
+      <Image
+        style={styles.league}
+        source={require('../../assets/premier_league.png')}
+       />
+      <Image
+        style={styles.league}
+        source={require('../../assets/champions_league.png')}
+       />
+    </View>
+    <View style={styles.footerContainer}>
+      <Text style={styles.footerText}>Powered by Fabrica 18</Text>
+      <Text style={styles.footerText}>{'\u00A9'}2019 - Todos os direitos reservados</Text>
+    </View>
+  </ImageBackground>
+);
+export default Main; */
+
+export default class Main extends React.Component {
+  state = {
+    modalVisible: false,
+  };
+
+  setModalVisible(visible) {
+    this.setState({ modalVisible: visible });
+  }
+
+  render() {
+    return (
+      <ImageBackground
+        source={require('../../assets/soccer-background.jpg')}
+        style={styles.backgroundImage}
+        resizeMode="cover"
+      >
+        <Image source={require('../../assets/logo.png')} style={styles.logo} />
+        <Image
+          source={require('../../assets/escale.png')}
+          style={styles.escale}
+        />
+        <Text style={styles.noAccountQuestion}>Ainda não tem uma conta?</Text>
+        <Button
+          title="CRIE SEU TIME AGORA"
+          titleStyle={styles.titleCreateNewTeam}
+          buttonStyle={styles.buttonCreateNewTeam}
+          onPress={() => this.props.navigation.navigate('Login')}
+        />
+        <View style={styles.container}>
+          <Text style={styles.isCustomer}>Já tem conta?</Text>
+          <Text style={styles.clickHere}>Acesse aqui</Text>
+        </View>
+
+        <View style={styles.leagueContainer}>
+          <Image
+            style={styles.league}
+            source={require('../../assets/copa_america.png')}
+          />
+          <Image
+            style={styles.league}
+            source={require('../../assets/copa_libertadores.png')}
+          />
+          <Image
+            style={styles.league}
+            source={require('../../assets/premier_league.png')}
+          />
+          <Image
+            style={styles.league}
+            source={require('../../assets/champions_league.png')}
+          />
+        </View>
+        <View style={styles.footerContainer}>
+          <Text style={styles.footerText}>Powered by Fabrica 18</Text>
+          <Text style={styles.footerText}>
+            {'\u00A9'}2019 - Todos os direitos reservados
+          </Text>
+        </View>
+
+        <View>
+          <Modal
+          animationType="slide"
+          backgroundColor="#222222"
+          transparent={false}
+          visible={this.state.modalVisible}
+          onRequestClose={() => {
+            Alert.alert('Modal has been closed.');
+          }}
+        >
+          <View style={{ marginTop: 22 }}>
+            <View>
+              <TouchableHighlight
+                onPress={() => {
+                  this.setModalVisible(!this.state.modalVisible);
+                }}
+              >
+                <Text>Hide Modal</Text>
+              </TouchableHighlight>
+            </View>
+          </View>
+        </Modal>
+
+          <TouchableHighlight
+            onPress={() => {
+            this.setModalVisible(true);
+          }}
+          >
+            <Text>Show Modal</Text>
+          </TouchableHighlight>
+        </View>
+      </ImageBackground>
+    );
+  }
+}
+
 const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
+  backgroundImage: {
+    width: '100%',
+    height: '100%',
     flex: 1,
-    paddingHorizontal: 20,
-    justifyContent: 'center',
+    alignItems: 'center',
   },
-  welcome: {
-    color: '#222',
-    fontSize: 22,
+  logo: {
+    resizeMode: 'center',
+  },
+  escale: {
+    resizeMode: 'center',
+    // todo:corrigir
+    marginTop: -64,
+  },
+  noAccountQuestion: {
+    color: '#fff',
     fontWeight: 'bold',
-    textAlign: 'center',
+    fontSize: 16,
+    paddingHorizontal: 20,
+    paddingBottom: 4,
+  },
+  buttonCreateNewTeam: {
+    backgroundColor: '#FFCC28',
+    borderRadius: 12,
+  },
+  titleCreateNewTeam: {
+    color: '#2A2627',
+    fontWeight: 'bold',
+    fontSize: 18,
+    marginVertical: 6,
+    paddingHorizontal: 32,
+  },
+  clickHere: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 16,
+    paddingHorizontal: 2,
+    paddingBottom: 4,
+    textDecorationLine: 'underline',
+  },
+  isCustomer: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 16,
+    paddingHorizontal: 2,
+    paddingBottom: 4,
+  },
+  container: {
+    paddingTop: 16,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  leagueContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    paddingBottom: 8,
+  },
+  league: {
+    width: 72,
+    height: 72,
+    paddingTop: 4,
+    margin: 4,
+  },
+  footerContainer: {
+    flex: 1,
+    alignItems: 'center',
+  },
+  footerText: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 14,
   },
 });
-
-const Main = () => (
-  <View style={styles.container}>
-    <Text style={styles.welcome}>MeuTimeFC</Text>
-  </View>
-);
-
-export default Main;
