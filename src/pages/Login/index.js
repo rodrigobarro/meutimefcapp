@@ -1,6 +1,6 @@
 import React from 'react';
 import {
- View, Text, StyleSheet, Image, ImageBackground,
+  View, Text, StyleSheet, Image, ImageBackground,
 } from 'react-native';
 
 import { Button, Input } from 'react-native-elements';

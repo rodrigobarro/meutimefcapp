@@ -6,17 +6,19 @@ import MenuExample from '~/pages/Main/Menu';
 import Signup from '~/pages/Signup';
 
 const Routes = createAppContainer(createStackNavigator({
-  Main: {
-    screen: Main,
-    navigationOptions: {
-      title: '',
-      headerTransparent: 'true',
-    },
-  },
   Signup: {
     screen: Signup,
     navigationOptions: {
       title: 'VAMOS CRIAR SEU TIME!',
+      headerTransparent: 'true',
+      headerTintColor: '#fff',
+      headerTitleStyle: { alignSelf: 'center' },
+    },
+  },
+  Main: {
+    screen: Main,
+    navigationOptions: {
+      title: '',
       headerTransparent: 'true',
     },
   },
