@@ -38,12 +38,13 @@ export default class Signup extends Component {
             iconRight
             titleStyle={styles.buttonTitleStyle}
             title="BOOOORAAAA!!!"
-            onPress={ () => this.props.navigation.navigate('Signup') }
+            onPress={() => this.props.navigation.navigate('CreateShield')}
           />
         </View>
+        {/*
         <View style={styles.bottomImageContainer}>
           <Image style={styles.bottomImage} source={require('../../assets/background.png')} />
-        </View>
+        </View> */}
       </View>
     );
   }
@@ -56,7 +57,7 @@ const styles = StyleSheet.create({
   },
   formContainer: {
     paddingHorizontal: 8,
-    marginTop: 72,
+    marginTop: 56,
     width: '100%',
     flex: 1,
     alignItems: 'center',
@@ -68,14 +69,14 @@ const styles = StyleSheet.create({
   },
   containerStyleButton: {
     width: '90%',
-    marginTop: 32,
+    marginTop: 8,
     backgroundColor: '#9A9B9F',
   },
   bottomImageContainer: {
     flex: 1,
-    justifyContent: 'flex-end',
     width: '100%',
     alignItems: 'center',
+    marginTop: -32,
   },
   bottomImage: {
     resizeMode: 'cover',
@@ -97,7 +98,7 @@ const styles = StyleSheet.create({
     height: 8,
   },
   containerInput: {
-    marginBottom: 6,
+    marginBottom: 4,
     paddingHorizontal: 16,
   },
   inputRestrictions: {

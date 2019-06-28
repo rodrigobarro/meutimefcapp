@@ -5,55 +5,6 @@ import {
 
 import { Button } from 'react-native-elements';
 
-/*
-const Main = () => (
-  <ImageBackground
-    source={require('../../assets/soccer-background.jpg')}
-    style={styles.backgroundImage}
-    resizeMode="cover"
-  >
-    <Image source={require('../../assets/logo.png')} style={styles.logo} />
-    <Image source={require('../../assets/escale.png')} style={styles.escale} />
-    <Text style={styles.noAccountQuestion}>Ainda não tem uma conta?</Text>
-    <Button
-      title="CRIE SEU TIME AGORA"
-      titleStyle={styles.titleCreateNewTeam}
-      buttonStyle={styles.buttonCreateNewTeam}
-      onPress={() =>
-        this.props.navigation.navigate('Friends')
-      }
-    />
-    <View style={styles.container}>
-      <Text style={styles.isCustomer}>Já tem conta?</Text>
-      <Text style={styles.clickHere}>Acesse aqui</Text>
-    </View>
-
-    <View style={styles.leagueContainer}>
-      <Image
-        style={styles.league}
-        source={require('../../assets/copa_america.png')}
-       />
-      <Image
-        style={styles.league}
-        source={require('../../assets/copa_libertadores.png')}
-       />
-      <Image
-        style={styles.league}
-        source={require('../../assets/premier_league.png')}
-       />
-      <Image
-        style={styles.league}
-        source={require('../../assets/champions_league.png')}
-       />
-    </View>
-    <View style={styles.footerContainer}>
-      <Text style={styles.footerText}>Powered by Fabrica 18</Text>
-      <Text style={styles.footerText}>{'\u00A9'}2019 - Todos os direitos reservados</Text>
-    </View>
-  </ImageBackground>
-);
-export default Main; */
-
 export default class Main extends React.Component {
   state = {
     modalVisible: false,
@@ -80,11 +31,16 @@ export default class Main extends React.Component {
           title="CRIE SEU TIME AGORA"
           titleStyle={styles.titleCreateNewTeam}
           buttonStyle={styles.buttonCreateNewTeam}
-          onPress={() => this.props.navigation.navigate('Login')}
+          onPress={() => this.props.navigation.navigate('Signup')}
         />
         <View style={styles.container}>
           <Text style={styles.isCustomer}>Já tem conta?</Text>
+          <TouchableHighlight 
+            onPress={() => this.props.navigation.navigate('Login')}
+          >
           <Text style={styles.clickHere}>Acesse aqui</Text>
+          </TouchableHighlight>
+          
         </View>
 
         <View style={styles.leagueContainer}>
@@ -215,6 +171,7 @@ const styles = StyleSheet.create({
   footerContainer: {
     flex: 1,
     alignItems: 'center',
+    marginTop: 48,
   },
   footerText: {
     color: '#fff',

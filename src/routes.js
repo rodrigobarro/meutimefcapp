@@ -10,6 +10,13 @@ import FinalStep from '~/pages/Signup/FinalStep';
 
 const Routes = createAppContainer(
   createStackNavigator({
+    Main: {
+      screen: Main,
+      navigationOptions: {
+        title: '',
+        headerTransparent: 'true',
+      },
+    },
     FinalStep: {
       screen: FinalStep,
       navigationOptions: {
@@ -46,13 +53,7 @@ const Routes = createAppContainer(
         headerTitleStyle: { alignSelf: 'center' },
       },
     },
-    Main: {
-      screen: Main,
-      navigationOptions: {
-        title: '',
-        headerTransparent: 'true',
-      },
-    },
+    
     Login: {
       screen: Login,
       navigationOptions: {

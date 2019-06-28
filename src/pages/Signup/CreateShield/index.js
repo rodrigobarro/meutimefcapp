@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
   StyleSheet, View, TouchableOpacity, Image, FlatList,
 } from 'react-native';
-import { Text, ButtonGroup, Icon } from 'react-native-elements';
+import { Text, ButtonGroup, Icon, Button } from 'react-native-elements';
 
 const styles = StyleSheet.create({
   container: {
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     height: 40,
     backgroundColor: '#1E1E1E',
     borderWidth: 0,
-    marginTop: -32,
+    marginTop: -64,
   },
   selectedButtonGroup: {
     backgroundColor: '#707375',
@@ -71,6 +71,38 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingHorizontal: 42,
+  },
+  containerStyleButton: {
+    width: '90%',
+    marginTop: 16,
+    backgroundColor: '#5C9C23',
+    alignSelf: 'center',
+  },
+  buttonStyle: {
+    backgroundColor: '#5C9C23',
+    borderRadius: 10,
+    height: 48,
+  },
+  buttonTitleStyle: {
+    marginRight: 60,
+    marginLeft: 60,
+    fontWeight: 'bold',
+  },
+  containerRandomButton: {
+    width: '90%',
+    marginTop: 16,
+    alignSelf: 'center',
+  },
+  randomButton: {
+    backgroundColor: '#3A3A3C',
+    borderRadius: 10,
+    height: 48,
+  },
+  randomButtonTitle: {
+    marginRight: 60,
+    marginLeft: 60,
+    fontWeight: 'bold',
+    fontSize: 14,
   },
 });
 
@@ -174,6 +206,26 @@ export default class CreateShield extends Component {
           />
 
         </View>
+
+        <Button
+          containerStyle={styles.containerRandomButton}
+          buttonStyle={styles.randomButton}
+          titleStyle={styles.randomButtonTitle}
+          title="MONTE PRA MIM"
+          onPress={() => alert('seleciona valores randomicamente')}
+        />
+
+        <Button
+          containerStyle={styles.containerStyleButton}
+          buttonStyle={styles.buttonStyle}
+          icon={<Icon name="chevron-right" size={48} color="white" />}
+          iconContainerStyle={{ marginLeft: 80 }}
+          iconRight
+          titleStyle={styles.buttonTitleStyle}
+          title="TÁ LINDO. VAIIIII!!!"
+          onPress={() => this.props.navigation.navigate('SelectClothes')}
+        />
+        <Image style={styles.bottomImage} source={require('~/assets/background.png')} />
       </View>
 
     );

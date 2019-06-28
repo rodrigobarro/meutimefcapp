@@ -102,7 +102,7 @@ export default class SelectClothes extends Component {
           iconRight
           titleStyle={styles.buttonTitleStyle}
           title="TÁ NA GRIFE. BORA!!!"
-          onPress={() => alert('ola')}
+          onPress={() => this.props.navigation.navigate('FinalStep')}
         />
         <Image style={styles.bottomImage} source={require('~/assets/background.png')} />
       </View>
