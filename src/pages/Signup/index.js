@@ -24,7 +24,7 @@ export default class Signup extends Component {
             containerStyle={styles.containerInput}
             inputStyle={styles.input}
             placeholderTextColor="#999999"
-            placeholder="Ex;: Murici Mourinho"
+            placeholder="Ex.: Murici Mourinho"
             label="QUAL O NOME DO SEU TÉCNICO"
             labelStyle={styles.labelInput}
           />
@@ -38,6 +38,7 @@ export default class Signup extends Component {
             iconRight
             titleStyle={styles.buttonTitleStyle}
             title="BOOOORAAAA!!!"
+            onPress={ () => this.props.navigation.navigate('Signup') }
           />
         </View>
         <View style={styles.bottomImageContainer}>
