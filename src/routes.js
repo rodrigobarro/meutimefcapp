@@ -7,9 +7,24 @@ import Signup from '~/pages/Signup';
 import CreateShield from '~/pages/Signup/CreateShield';
 import SelectClothes from '~/pages/Signup/SelectClothes';
 import FinalStep from '~/pages/Signup/FinalStep';
+import RecoverPass from '~/pages/RecoverPass';
 
 const Routes = createAppContainer(
   createStackNavigator({
+    RecoverPass: {
+      screen: RecoverPass,
+      navigationOptions: {
+        title: '',
+        headerTransparent: 'true',
+      },
+    },
+    Login: {
+      screen: Login,
+      navigationOptions: {
+        title: '',
+        headerTransparent: 'true',
+      },
+    },
     Main: {
       screen: Main,
       navigationOptions: {
@@ -53,14 +68,15 @@ const Routes = createAppContainer(
         headerTitleStyle: { alignSelf: 'center' },
       },
     },
-    
+    /*
     Login: {
       screen: Login,
       navigationOptions: {
         title: '',
         headerTransparent: 'true',
       },
-    },
+    },*/
+    
     MenuExample: {
       screen: MenuExample,
       navigationOptions: {

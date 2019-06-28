@@ -1,12 +1,12 @@
 import React from 'react';
 import {
-  View, Text, StyleSheet, Image, ImageBackground, TouchableOpacity,
+  View, Text, StyleSheet, Image, ImageBackground,
 } from 'react-native';
 
 import { Button, Input } from 'react-native-elements';
 
 // eslint-disable-next-line react/prefer-stateless-function
-export default class Login extends React.Component {
+export default class RecoverPass extends React.Component {
   render() {
     return (
       <ImageBackground
@@ -15,51 +15,44 @@ export default class Login extends React.Component {
         resizeMode="cover"
       >
         <Image source={require('../../assets/logo.png')} style={styles.logo} />
-        <Image source={require('../../assets/escale.png')} style={styles.escale} />
-        <Text style={styles.accessTitle}>ACESSE SUA CONTA</Text>
+        <Image
+          source={require('../../assets/escale.png')}
+          style={styles.escale}
+        />
+        <Text style={styles.accessTitle}>RECUPERE SUA SENHA</Text>
         <Input
           containerStyle={styles.containerInput}
           inputStyle={styles.input}
           placeholderTextColor="#999999"
-          placeholder="Digite seu email"
-          label="Email"
+          placeholder="Email"
+          label="DIGITE SEU EMAIL"
           labelStyle={styles.labelInput}
         />
-        <Input
-          containerStyle={styles.containerInput}
-          inputStyle={styles.input}
-          placeholderTextColor="#999999"
-          placeholder="Digite sua senha"
-          label="Senha"
-          labelStyle={styles.labelInput}
-        />
-
-        <TouchableOpacity
-          
-        >
-          <Text style={styles.usePhoneNumber}>Usar número do seu celular</Text>
-        </TouchableOpacity>
 
         <Button
-          title="ENTRAR"
+          title="RECUPERAR SENHA"
           titleStyle={styles.buttonTitle}
           buttonStyle={styles.button}
           containerStyle={styles.buttonContainer}
-          onPress={() => this.props.navigation.navigate('Signup')}
         />
 
-        <TouchableOpacity
-          onPress={() => this.props.navigation.navigate('RecoverPass')}
-        >
-          <Text style={styles.passwordRecovery}>Recuperar senha</Text>
-        </TouchableOpacity>
+        <View style={styles.footerContainer}>
+          <View
+            style={{
+              marginTop: 16,
+              borderBottomColor: '#FFFFFF',
+              borderBottomWidth: 1,
+              width: '90%',
+            }}
+          />
 
-        <View style={styles.divider} />
+          <View style={styles.container}>
+            <Text style={styles.isCustomer}>Ainda não tem uma conta?</Text>
+            <Text style={styles.clickHere}>Cadastre-se</Text>
+          </View>
 
-        <View style={styles.container}>
-          <Text style={styles.isCustomer}>Ainda não tem uma conta?</Text>
-          <Text style={styles.clickHere}>Cadastre-se</Text>
         </View>
+
       </ImageBackground>
     );
   }
@@ -94,12 +87,12 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     fontWeight: 'bold',
     paddingBottom: 8,
-    marginTop: -32,
+    marginTop: -24,
   },
   containerInput: {
     marginBottom: 6,
     paddingHorizontal: 16,
-    marginTop: -8,
+    marginTop: 16,
   },
   labelInput: {
     color: '#ffffff',
@@ -107,19 +100,18 @@ const styles = StyleSheet.create({
     paddingBottom: 4,
   },
   buttonContainer: {
-    marginTop: 8,
+    marginTop: 16,
     width: '90%',
   },
   button: {
     backgroundColor: '#2D8E43',
     borderRadius: 12,
-    height: 40,
+    height: 48,
   },
   buttonTitle: {
     color: '#FFFFFF',
     fontWeight: 'bold',
-    fontSize: 18,
-    marginVertical: 6,
+    fontSize: 16,
     paddingHorizontal: 32,
   },
   clickHere: {
@@ -130,20 +122,12 @@ const styles = StyleSheet.create({
     paddingBottom: 4,
     textDecorationLine: 'underline',
   },
-  passwordRecovery: {
-    color: '#fff',
-    fontWeight: 'bold',
-    fontSize: 16,
-    paddingHorizontal: 2,
-    paddingBottom: 4,
-    marginTop: 12,
-    textDecorationLine: 'underline',
-  },
   container: {
     paddingTop: 16,
     flexDirection: 'row',
     alignItems: 'center',
     paddingBottom: 12,
+
   },
   isCustomer: {
     color: '#fff',
@@ -152,18 +136,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 2,
     paddingBottom: 4,
   },
-  usePhoneNumber: {
-    color: '#fff',
-    fontWeight: 'bold',
-    fontSize: 16,
-    paddingHorizontal: 2,
-    paddingBottom: 8,
-    textDecorationLine: 'underline',
-  },
-  divider: {
-    marginTop: 16,
-    borderBottomColor: '#FFFFFF',
-    borderBottomWidth: 1,
-    width: '90%',
+  footerContainer: {
+    flex: 1,
+    width: '100%',
+    alignItems: 'center',
+    marginTop: 28,
   },
 });
