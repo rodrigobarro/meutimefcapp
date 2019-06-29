@@ -5,8 +5,25 @@ import {
 
 import { Button, Input } from 'react-native-elements';
 
+// import {TextInputMask} from 'react-native-masked-text';
+
 // eslint-disable-next-line react/prefer-stateless-function
 export default class Login extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      show: true,
+    };
+  }
+
+  ShowHideComponent = () => {
+    if (this.state.show == true) {
+      this.setState({ show: false });
+    } else {
+      this.setState({ show: true });
+    }
+  };
+
   render() {
     return (
       <ImageBackground
@@ -17,27 +34,40 @@ export default class Login extends React.Component {
         <Image source={require('../../assets/logo.png')} style={styles.logo} />
         <Image source={require('../../assets/escale.png')} style={styles.escale} />
         <Text style={styles.accessTitle}>ACESSE SUA CONTA</Text>
-        <Input
-          containerStyle={styles.containerInput}
-          inputStyle={styles.input}
-          placeholderTextColor="#999999"
-          placeholder="Digite seu email"
-          label="Email"
-          labelStyle={styles.labelInput}
-        />
-        <Input
-          containerStyle={styles.containerInput}
-          inputStyle={styles.input}
-          placeholderTextColor="#999999"
-          placeholder="Digite sua senha"
-          label="Senha"
-          labelStyle={styles.labelInput}
-        />
+        {this.state.show ? (
+          <View style={{ width: '100%' }}>
+            <Input
+              containerStyle={styles.containerInput}
+              inputStyle={styles.input}
+              placeholderTextColor="#999999"
+              placeholder="Digite seu email"
+              label="Email"
+              labelStyle={styles.labelInput}
+            />
+            <Input
+              containerStyle={styles.containerInput}
+              inputStyle={styles.input}
+              placeholderTextColor="#999999"
+              placeholder="Digite sua senha"
+              label="Senha"
+              labelStyle={styles.labelInput}
+            />
+          </View>
+        ) : (
+          <Input
+            containerStyle={styles.containerInput}
+            inputStyle={styles.input}
+            placeholderTextColor="#999999"
+            placeholder="+55 (00) 00000-0000"
+            label="DIGITE O NÚMERO DO SEU CELULAR"
+            labelStyle={styles.labelInput}
+          />
+        )}
 
-        <TouchableOpacity
-          
-        >
-          <Text style={styles.usePhoneNumber}>Usar número do seu celular</Text>
+        <TouchableOpacity onPress={this.ShowHideComponent}>
+          <Text style={styles.usePhoneNumber}>
+            {this.state.show ? 'Usar número do seu celular' : 'Usar E-mail'}
+          </Text>
         </TouchableOpacity>
 
         <Button
@@ -48,11 +78,11 @@ export default class Login extends React.Component {
           onPress={() => this.props.navigation.navigate('Signup')}
         />
 
-        <TouchableOpacity
-          onPress={() => this.props.navigation.navigate('RecoverPass')}
-        >
-          <Text style={styles.passwordRecovery}>Recuperar senha</Text>
-        </TouchableOpacity>
+        {this.state.show ? (
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('RecoverPass')}>
+            <Text style={styles.passwordRecovery}>Recuperar senha</Text>
+          </TouchableOpacity>
+        ) : null}
 
         <View style={styles.divider} />
 
@@ -99,7 +129,7 @@ const styles = StyleSheet.create({
   containerInput: {
     marginBottom: 6,
     paddingHorizontal: 16,
-    marginTop: -8,
+    marginTop: -6,
   },
   labelInput: {
     color: '#ffffff',
