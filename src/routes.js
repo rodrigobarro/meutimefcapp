@@ -11,6 +11,14 @@ import RecoverPass from '~/pages/RecoverPass';
 
 const Routes = createAppContainer(
   createStackNavigator({
+    Main: {
+      screen: Main,
+      navigationOptions: {
+        title: '',
+        headerTransparent: 'true',
+        
+      },
+    },
     Login: {
       screen: Login,
       navigationOptions: {
@@ -20,13 +28,6 @@ const Routes = createAppContainer(
     },
     RecoverPass: {
       screen: RecoverPass,
-      navigationOptions: {
-        title: '',
-        headerTransparent: 'true',
-      },
-    },
-    Main: {
-      screen: Main,
       navigationOptions: {
         title: '',
         headerTransparent: 'true',
