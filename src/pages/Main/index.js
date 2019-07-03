@@ -76,7 +76,8 @@ export default class Main extends React.Component {
         <Image source={require('../../assets/escale.png')} style={styles.escale} />
         <Text style={styles.noAccountQuestion}>Ainda não tem uma conta?</Text>
         <Button
-          title="CRIE SEU TIME AGORA"
+          title="CRIE SEU TIME AGORA!"
+          containerStyle={{width: '80%'}}
           titleStyle={styles.titleCreateNewTeam}
           buttonStyle={styles.buttonCreateNewTeam}
           onPress={() => this.props.navigation.navigate('Signup')}
@@ -225,12 +226,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   logo: {
+    marginTop: -32,
     resizeMode: 'center',
   },
   escale: {
     resizeMode: 'center',
-    // todo:corrigir
-    marginTop: -64,
+    width: '80%',
+    marginTop: -72,
   },
   noAccountQuestion: {
     color: '#fff',
@@ -238,17 +240,19 @@ const styles = StyleSheet.create({
     fontSize: 16,
     paddingHorizontal: 20,
     paddingBottom: 4,
+    marginTop: -24,
+    fontFamily: 'oswaldRegular',
   },
   buttonCreateNewTeam: {
     backgroundColor: '#FFCC28',
     borderRadius: 12,
+    paddingBottom: 12,
+    paddingTop: 12,
   },
   titleCreateNewTeam: {
     color: '#2A2627',
-    fontWeight: 'bold',
     fontSize: 18,
-    marginVertical: 6,
-    paddingHorizontal: 32,
+    fontFamily: 'oswaldRegular',
   },
   clickHere: {
     color: '#fff',
@@ -273,6 +277,7 @@ const styles = StyleSheet.create({
   leagueContainer: {
     flex: 1,
     flexDirection: 'row',
+    marginTop: 8,
     paddingBottom: 8,
   },
   league: {
@@ -289,7 +294,7 @@ const styles = StyleSheet.create({
   footerText: {
     color: '#fff',
     fontWeight: 'bold',
-    fontSize: 14,
+    fontSize: 12,
   },
   card: {
     marginTop: 32,

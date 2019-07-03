@@ -2,7 +2,7 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
 import { StyleSheet, View, Image } from 'react-native';
-import { Button, Input, Text } from 'react-native-elements';
+import { Button, Input, Text, } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class Signup extends Component {
@@ -10,23 +10,22 @@ export default class Signup extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.formContainer}>
+          <Text style={styles.labelInput}>QUAL O NOME DO SEU TIME?</Text>
           <Input
             containerStyle={styles.containerInput}
             inputStyle={styles.input}
             placeholderTextColor="#999999"
             placeholder="Ex.: Arrasador Futebol Clube"
-            label="QUAL O NOME DO SEU TIME?"
-            labelStyle={styles.labelInput}
             underlineColorAndroid="transparent"
           />
           <Text style={styles.inputRestrictions}>2 a 30 caracteres (só letras e números)</Text>
+          
+          <Text style={styles.labelInput}>QUAL O NOME DO SEU TÉCNICO?</Text>
           <Input
             containerStyle={styles.containerInput}
             inputStyle={styles.input}
             placeholderTextColor="#999999"
             placeholder="Ex.: Murici Mourinho"
-            label="QUAL O NOME DO SEU TÉCNICO"
-            labelStyle={styles.labelInput}
           />
           <Text style={styles.inputRestrictions}>2 a 30 caracteres (só letras e números)</Text>
 
@@ -38,14 +37,16 @@ export default class Signup extends Component {
             iconRight
             titleStyle={styles.buttonTitleStyle}
             title="BOOOORAAAA!!!"
-            onPress={() => this.props.navigation.navigate('CreateShield')}
+            //onPress={() => this.props.navigation.navigate('CreateShield')}
           />
         </View>
         {/*
         <View style={styles.bottomImageContainer}>
           <Image style={styles.bottomImage} source={require('../../assets/background.png')} />
         </View> */}
-      </View>
+       
+             
+        </View>
     );
   }
 }
@@ -66,6 +67,9 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     fontSize: 16,
     paddingBottom: 4,
+    fontFamily: 'oswaldRegular',
+    alignSelf: 'flex-start',
+    marginLeft: 16,
   },
   containerStyleButton: {
     width: '90%',
@@ -89,7 +93,7 @@ const styles = StyleSheet.create({
   buttonTitleStyle: {
     marginRight: 60,
     marginLeft: 60,
-    fontWeight: 'bold',
+    fontFamily: 'oswaldRegular',
   },
   input: {
     backgroundColor: '#3A3A3C',

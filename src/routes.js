@@ -66,9 +66,14 @@ const Routes = createAppContainer(
         title: 'VAMOS CRIAR SEU TIME!',
         headerTransparent: 'true',
         headerTintColor: '#fff',
-        headerTitleStyle: { alignSelf: 'center' },
+        headerTitleStyle: {
+          alignSelf: 'center',
+          justifyContent: 'center',
+          fontFamily: 'oswaldRegular',
+          fontWeight: '400',
+        },
       },
-    }, 
+    },
     MenuExample: {
       screen: MenuExample,
       navigationOptions: {

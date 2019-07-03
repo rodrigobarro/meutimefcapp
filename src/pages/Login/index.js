@@ -36,32 +36,36 @@ export default class Login extends React.Component {
         <Text style={styles.accessTitle}>ACESSE SUA CONTA</Text>
         {this.state.show ? (
           <View style={{ width: '100%' }}>
+          <Text style={styles.labelInput}>E-mail</Text>
+
             <Input
               containerStyle={styles.containerInput}
               inputStyle={styles.input}
               placeholderTextColor="#999999"
-              placeholder="Digite seu email"
-              label="Email"
-              labelStyle={styles.labelInput}
+              placeholder="Digite seu E-mail"
+     
             />
+            <Text style={styles.labelInput}>Senha</Text>
+
             <Input
               containerStyle={styles.containerInput}
               inputStyle={styles.input}
               placeholderTextColor="#999999"
               placeholder="Digite sua senha"
-              label="Senha"
-              labelStyle={styles.labelInput}
+
             />
           </View>
         ) : (
-          <Input
-            containerStyle={styles.containerInput}
-            inputStyle={styles.input}
-            placeholderTextColor="#999999"
-            placeholder="+55 (00) 00000-0000"
-            label="DIGITE O NÚMERO DO SEU CELULAR"
-            labelStyle={styles.labelInput}
-          />
+          <View style={{width: '100%'}}>
+          <Text style={styles.labelInput}>DIGITE O NÚMERO DO SEU CELULAR</Text>
+            <Input
+              containerStyle={styles.containerInput}
+              inputStyle={styles.input}
+              placeholderTextColor="#999999"
+              placeholder="+55 (00) 00000-0000"
+            />
+          </View>
+          
         )}
 
         <TouchableOpacity onPress={this.ShowHideComponent}>
@@ -75,7 +79,7 @@ export default class Login extends React.Component {
           titleStyle={styles.buttonTitle}
           buttonStyle={styles.button}
           containerStyle={styles.buttonContainer}
-          onPress={() => this.props.navigation.navigate('Signup')}
+        //onPress={() => this.props.navigation.navigate('Signup')}
         />
 
         {this.state.show ? (
@@ -88,7 +92,10 @@ export default class Login extends React.Component {
 
         <View style={styles.container}>
           <Text style={styles.isCustomer}>Ainda não tem uma conta?</Text>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('Signup')}>
           <Text style={styles.clickHere}>Cadastre-se</Text>
+
+          </TouchableOpacity>
         </View>
       </ImageBackground>
     );
@@ -117,14 +124,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
     borderRadius: 8,
     paddingHorizontal: 16,
-    height: 8,
+    height: 24,
   },
   accessTitle: {
-    fontSize: 16,
+    fontSize: 18,
     color: '#ffffff',
-    fontWeight: 'bold',
     paddingBottom: 8,
     marginTop: -32,
+    fontFamily: 'oswaldBold',
   },
   containerInput: {
     marginBottom: 6,
@@ -135,6 +142,9 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     fontSize: 16,
     paddingBottom: 4,
+    fontFamily: 'oswaldRegular',
+    alignSelf: 'flex-start',
+    marginLeft: 16,
   },
   buttonContainer: {
     marginTop: 8,
@@ -147,7 +157,7 @@ const styles = StyleSheet.create({
   },
   buttonTitle: {
     color: '#FFFFFF',
-    fontWeight: 'bold',
+    fontFamily: 'oswaldRegular',
     fontSize: 18,
     marginVertical: 6,
     paddingHorizontal: 32,
@@ -162,8 +172,8 @@ const styles = StyleSheet.create({
   },
   passwordRecovery: {
     color: '#fff',
-    fontWeight: 'bold',
     fontSize: 16,
+    fontFamily: 'oswaldRegular',
     paddingHorizontal: 2,
     paddingBottom: 4,
     marginTop: 12,
@@ -184,14 +194,14 @@ const styles = StyleSheet.create({
   },
   usePhoneNumber: {
     color: '#fff',
-    fontWeight: 'bold',
+    fontFamily: 'oswaldRegular',
     fontSize: 16,
     paddingHorizontal: 2,
     paddingBottom: 8,
     textDecorationLine: 'underline',
   },
   divider: {
-    marginTop: 16,
+    marginTop: 32,
     borderBottomColor: '#FFFFFF',
     borderBottomWidth: 1,
     width: '90%',

@@ -38,6 +38,9 @@
 		2D16E6881FA4F8E400B85C8A /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D16E6891FA4F8E400B85C8A /* libReact.a */; };
 		2DCD954D1E0B4F2C00145EB5 /* MeuTimeFcAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* MeuTimeFcAppTests.m */; };
 		2DF0FFEE2056DD460020B375 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
+		3227C9E622CC28E700F1C245 /* oswaldLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3227C9B922CC28E600F1C245 /* oswaldLight.ttf */; };
+		3227C9E722CC28E700F1C245 /* oswaldBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3227C9E422CC28E600F1C245 /* oswaldBold.ttf */; };
+		3227C9E822CC28E700F1C245 /* oswaldRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3227C9E522CC28E700F1C245 /* oswaldRegular.ttf */; };
 		4472B078A5AA48F5B78EF008 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81DD7ECDFE9F43C9A3D88566 /* Entypo.ttf */; };
 		4EE43A8FB6184E2FB73E0377 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D20C3F63C269452CA6F9A7D6 /* FontAwesome5_Regular.ttf */; };
 		50199F6665532626463C411D /* Pods_MeuTimeFcApp_tvOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 889AE5A8DF905793576FBE02 /* Pods_MeuTimeFcApp_tvOSTests.framework */; };
@@ -408,6 +411,9 @@
 		2D02E4901E0B4A5D006451C7 /* MeuTimeFcApp-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MeuTimeFcApp-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D5297DBD1AF45AD956FE8DD /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		3227C9B922CC28E600F1C245 /* oswaldLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oswaldLight.ttf; sourceTree = "<group>"; };
+		3227C9E422CC28E600F1C245 /* oswaldBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oswaldBold.ttf; sourceTree = "<group>"; };
+		3227C9E522CC28E700F1C245 /* oswaldRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oswaldRegular.ttf; sourceTree = "<group>"; };
 		3A880B46CC954AA3AA11489A /* libAppCenterReactNativeCrashes.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libAppCenterReactNativeCrashes.a; sourceTree = "<group>"; };
 		413CCAD1D0054EC58CDF036A /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		4455F41C79FD315D2222DD65 /* Pods-MeuTimeFcApp-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeuTimeFcApp-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-MeuTimeFcApp-tvOS/Pods-MeuTimeFcApp-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -644,6 +650,9 @@
 		2E2EA61968B64B6DA7B5CA0B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3227C9E422CC28E600F1C245 /* oswaldBold.ttf */,
+				3227C9B922CC28E600F1C245 /* oswaldLight.ttf */,
+				3227C9E522CC28E700F1C245 /* oswaldRegular.ttf */,
 				E37A117F4220492EA02818C0 /* AntDesign.ttf */,
 				81DD7ECDFE9F43C9A3D88566 /* Entypo.ttf */,
 				FDCDDC0F9B3542EB8A8EDE90 /* EvilIcons.ttf */,
@@ -1315,14 +1324,17 @@
 				F0D01A9582CC4CEA8487085F /* AppCenter-Config.plist in Resources */,
 				A36EB47CF6B14D6B963CE560 /* AntDesign.ttf in Resources */,
 				4472B078A5AA48F5B78EF008 /* Entypo.ttf in Resources */,
+				3227C9E722CC28E700F1C245 /* oswaldBold.ttf in Resources */,
 				E101ED190DE841CEBDACBD40 /* EvilIcons.ttf in Resources */,
 				A2E61A2896B04E9DB4E67B6F /* Feather.ttf in Resources */,
+				3227C9E622CC28E700F1C245 /* oswaldLight.ttf in Resources */,
 				DC907C7A96594C51B5726FC6 /* FontAwesome.ttf in Resources */,
 				23CB9BD81A5A41C69F7FB211 /* FontAwesome5_Brands.ttf in Resources */,
 				4EE43A8FB6184E2FB73E0377 /* FontAwesome5_Regular.ttf in Resources */,
 				BA3F4CE49EA242AAA06A82BA /* FontAwesome5_Solid.ttf in Resources */,
 				7B9644F0C67E41479CF957E6 /* Foundation.ttf in Resources */,
 				9E928C270040404D86024C7A /* Ionicons.ttf in Resources */,
+				3227C9E822CC28E700F1C245 /* oswaldRegular.ttf in Resources */,
 				CA9CB58A6865454DA642CC5C /* MaterialCommunityIcons.ttf in Resources */,
 				A64C14ACE68E4FF99EBE0DD9 /* MaterialIcons.ttf in Resources */,
 				269138813E5E4BD89C476E63 /* Octicons.ttf in Resources */,
